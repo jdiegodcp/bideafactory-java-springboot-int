@@ -52,3 +52,7 @@ POST
 
 # In case we don't want to use any IDE that facilitate the use of environment variables we can use the actual values of the variables that right now have a variable to be called by docker compose.
 
+
+## Fixes after the limit time ,
+
+Changes made on develop were necessary to clean up small details and also allow to just execute docker compose up -d wherever the repo is clonned without needing to generate the jar , it's going to generate it on the the app container itself.
