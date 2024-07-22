@@ -29,11 +29,15 @@ This is a Spring Boot project that connects to a PostgreSQL database to save the
 ```bash
 git clone https://github.com/yourusername/your-repository.git
 cd your-repository
-#  With the use of an IDE or manually generate the JAR corresponding to the project and then run the next command
 docker compose up -d 
 # Depending how much capacity the Computer where this is going to run it can take a few couple minutes to more.
 
 # After Spring has started inside the container you can request to the following endpoints:
+
+To test you need to import the collection in the following path:
+
+
+docs/Bookingapi.postman_collection.json
 
 
 base_url : http://localhost:8080
@@ -46,6 +50,8 @@ GET
 POST
 
 {{base_url}}/bideafactory/book
+
+and update the collection variable base_url to the server where the docker composer up -d was executed and add the 8080 to specify the port where the spring boot will be running.
 
 # If you don't know how to look inside the container, it's fine to just request to the first endpoint until it shows [] which is going to be the list of bookings made, at the beginning we won't have any booking.
 
