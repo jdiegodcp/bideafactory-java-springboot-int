@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "823bb0bc-623a-4e8e-98ec-c0c221bbfe2b",
+		"name": "Bookingapi",
+		"description": "# 🚀Get started here\n\nThis collection guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n``` json\n{\n    \"id\": \"14564088-4\",\n    \"name\": \"Gonzalo\",\n    \"lastname\": \"Pérez\",\n    \"age\": 33,\n    \"phoneNumber\": \"56988123222\",\n    \"startDate\": \"2022-03-04\",\n    \"endDate\": \"2022-03-04\",\n    \"houseId\": \"213132\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. I've have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [http://localhost:8080](http://localhost:8080). Replace it with your API endpoint to customize this collection like this example: [http://ip172-18-0-107-cqeq7h0l2o9000bd2qt0-8080.direct.labs.play-with-docker.com:8080](http://ip172-18-0-107-cqeq7h0l2o9000bd2qt0-8080.direct.labs.play-with-docker.com:8080) .",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11683237"
+	},
+	"item": [
+		{
+			"name": "listBooks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"14564088-4\",\r\n    \"name\": \"Gonzalo\",\r\n    \"lastname\": \"Pérez\",\r\n    \"age\": 33,\r\n    \"phoneNumber\": \"56988123222\",\r\n    \"startDate\": \"2022-03-04\",\r\n    \"endDate\": \"2022-03-04\",\r\n    \"houseId\": \"213132\",\r\n    \"discountCode\": \"D0542A23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/bideafactory/books",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bideafactory",
+						"books"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "saveBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"14564088-4\",\r\n    \"name\": \"Gonzalo\",\r\n    \"lastname\": \"Pérez\",\r\n    \"age\": 33,\r\n    \"phoneNumber\": \"56988123222\",\r\n    \"startDate\": \"2022-03-04\",\r\n    \"endDate\": \"2022-03-04\",\r\n    \"houseId\": \"213132\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/bideafactory/book",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bideafactory",
+						"book"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

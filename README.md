@@ -20,6 +20,7 @@ This is a Spring Boot project that connects to a PostgreSQL database to save the
 - Docker
 - Docker Compose
 - IDE IntelliJ  -- suggested to manage environment variables or any other IDE that can allow you to do that
+- Postman -- suggested to test the endpoints with an easy interface
 
 ## Getting Started
 
@@ -55,4 +56,6 @@ POST
 
 ## Fixes after the limit time ,
 
-Changes made on develop were necessary to clean up small details and also allow to just execute docker compose up -d wherever the repo is clonned without needing to generate the jar , it's going to generate it on the the app container itself.
+Changes made on develop were necessary to clean up small details and also allow to just execute "docker compose up -d" wherever the repo is clonned without needing to generate the jar , it's going to generate it on the the app container itself.
+
+It's been added a basic collection under the folder docs , were it's given the instruction to update the url of the server under the variables tab of this collection and you can test the endpoints
