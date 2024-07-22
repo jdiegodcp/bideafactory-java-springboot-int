@@ -1,7 +1,7 @@
 package com.juandiegodelacruz.bookingapi.service;
 
 import com.juandiegodelacruz.bookingapi.model.Book;
-import com.juandiegodelacruz.bookingapi.repository.UserRepository;
+import com.juandiegodelacruz.bookingapi.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +11,13 @@ import java.util.List;
 public class BookService {
 
     @Autowired
-    private UserRepository userRepository;
+    private BookRepository bookRepository;
 
     public List<Book> getAllBooks() {
-        return userRepository.findAll();
+        return bookRepository.findAll();
     }
 
     public Book saveBook(Book book) {
-        return userRepository.save(book);
+        return bookRepository.save(book);
     }
 }
